@@ -57,17 +57,18 @@ app.get("/newpost", (req, res) => {
 
 // Handle New Post Submission
 app.post("/newpost", (req, res) => {
+  const posts = loadPosts();
   const { title, body } = req.body;
+  if (posts.some(p => p.title === title)) {
+    return res.status(400).send("Post with the same title already exists. Please use a different title.");
+  }
   const newPost = {
     title,
     body,
     date: new Date().toLocaleDateString(),
   };
-  const posts = loadPosts();
   posts.push(newPost);
   savePosts(posts);
-
-  // Redirect to home after submission
   res.redirect("/");
 });
 
@@ -98,7 +99,7 @@ app.post("/post/:title/delete", (req, res) => {
   let posts = loadPosts();
   posts = posts.filter(p => p.title !== req.params.title); // Remove the matching post
   savePosts(posts);
-  res.redirect("/"); // Redirect to the homepage after deletion
+  res.redirect("/"); 
 });
 
 
