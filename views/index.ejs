@@ -6,7 +6,7 @@
     <% posts.forEach((post, index) => { %>
         <div class="blog-entry">
           <span class="blog-date"><%= post.date %></span>
-          <a href="/post/<%= post.title %>" class="blog-text"><%= post.title %></a> 
+          <a href="/post/<%= encodeURIComponent(post.title) %>" class="blog-text"><%= post.title %></a> 
         </div>
       <% }) %>
   <% } else { %>

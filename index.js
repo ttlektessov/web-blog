@@ -34,12 +34,12 @@ app.get("/", (req, res) => {
 // View Single Post Route
 app.get("/post/:title", (req, res) => {
   const posts = loadPosts();
-  const postTitle = req.params.title; // Get the post title from the URL
+  const postTitle = decodeURIComponent(req.params.title); // Get the post title from the URL
   const post = posts.find(p => p.title === postTitle); // Find post by title
   if (post) {
     res.render("post.ejs", { post });
   } else {
-    res.status(404).send("Post not found");
+    res.render("404.ejs");
   }
 });
 
@@ -77,7 +77,7 @@ app.get("/post/:title/edit", (req, res) => {
   if (post) {
     res.render("edit.ejs", { post });
   } else {
-    res.status(404).send("Post not found");
+    res.render("404.ejs");
   }
 });
 
@@ -90,7 +90,7 @@ app.post("/post/:title/edit", (req, res) => {
     savePosts(posts);
     res.redirect(`/post/${encodeURIComponent(req.body.title)}`);
   } else {
-    res.status(404).send("Post not found");
+    res.render("404.ejs");
   }
 });
 
@@ -100,17 +100,6 @@ app.post("/post/:title/delete", (req, res) => {
   savePosts(posts);
   res.redirect("/"); // Redirect to the homepage after deletion
 });
-
-app.delete("/delete/post/:title", (req,res)=>{
-  const posts = loadPosts();
-  const postTitle = req.params.title; // Get the post title from the URL
-  const post = posts.find(p => p.title === postTitle); // Find post by title
-  if (post) {
-    res.render("post.ejs", { post });
-  } else {
-    res.status(404).send("Post not found");
-  }
-})
 
 
 app.listen(port, () => {
