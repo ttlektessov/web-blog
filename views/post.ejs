@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<div class="blog-container">
+  <h2><%= post.title %></h2>
+  <span class="blog-date"><%= post.date %></span>
+  <div class="blog-body">
+    <p><%= post.body %></p>
+  </div>
+
+  <!-- Add Edit and Delete Buttons -->
+  <div class="post-actions">
+    <a href="/post/<%= encodeURIComponent(post.title) %>/edit" class="btn">Edit</a>
+    <form action="/post/<%= encodeURIComponent(post.title) %>/delete" method="POST" style="display: inline;">
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

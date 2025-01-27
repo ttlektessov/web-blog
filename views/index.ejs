@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+<div class="blog-container">
+  <h2>Blog</h2>
+  <% if (posts.length > 0) { %>
+    <% posts.forEach((post, index) => { %>
+        <div class="blog-entry">
+          <span class="blog-date"><%= post.date %></span>
+          <a href="/post/<%= post.title %>" class="blog-text"><%= post.title %></a> 
+        </div>
+      <% }) %>
+  <% } else { %>
+    <p>No blog posts available. Create one now!</p>
+  <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>

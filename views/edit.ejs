@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+
+<div class="blog-container">
+  <h2>Edit Post</h2>
+  <form action="/post/<%= encodeURIComponent(post.title) %>/edit" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="<%= post.title %>" required />
+
+    <label for="body">Body:</label>
+    <textarea id="body" name="body" required><%= post.body %></textarea>
+
+    <button type="submit" class="btn">Save Changes</button>
+  </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

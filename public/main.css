@@ -1,0 +1,170 @@
+body {
+  background: #222;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  color: whitesmoke;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh;
+}
+
+main {
+  
+  position: relative;
+  max-width: 700px; /* Set a max width for your content */
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the left */
+  justify-content: center;
+  text-align: left; /* Ensure text aligns to the left */
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+h2{
+  font-size: 2rem;
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  font-size: 0.9rem;
+  background: #888;
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer p {
+  font-size: 12px;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+
+/* NAV-LINKS  */
+
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+
+/* BLOG ENTRY, DATE AND TEXT */
+.blog-container {
+  padding: 1rem; /* Add spacing around the container */
+  word-wrap: break-word; /* Ensure long words break to fit */
+  overflow-wrap: break-word; /* Compatibility */
+  box-sizing: border-box; /* Make padding part of width */
+  max-width: 100%; /* Prevent horizontal overflow */
+}
+
+.blog-body {
+  word-wrap: break-word; /* Ensure long text breaks */
+  overflow-wrap: break-word; /* Compatibility */
+  max-width: 100%; /* Prevent content from spilling horizontally */
+}
+
+.blog-body p {
+  white-space: pre-wrap; /* Preserve line breaks and wrap long text */
+  word-break: break-word; /* Break long words */
+  overflow: hidden; /* Prevent overflowing */
+  text-align: left; /* Ensure alignment */
+}
+.blog-entry{
+  display: flex;
+  gap: 2rem;
+  margin: 20px 0 20px 0;
+}
+
+.blog-date{
+  color: grey;
+}
+
+.blog-text{
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 8px 16px;
+  color: white;
+  background-color: grey;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background-color: #872341;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  color: black;
+}
+
+form button {
+  padding: 8px 16px;
+  color: white;
+  background-color: #872341;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
