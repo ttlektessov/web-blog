@@ -1,11 +1,11 @@
 <%- include("partials/header.ejs") %>
 
-<div class="latest-container">
+<div class="blog-container">
   <h2>Latest Post</h2>
   <% if (latestPost) { %>
     <h3><%= latestPost.title %></h3>
-    <p><%= latestPost.body %></p>
-    <small><%= latestPost.date %></small>
+    <div class="blog-body"><p><%= latestPost.body %></p></div>
+    <small class="blog-date"><%= latestPost.date %></small>
   <% } else { %>
     <p>No posts available.</p>
   <% } %>
