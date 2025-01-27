@@ -6,22 +6,21 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  height: 100vh;
+  flex-direction: column; 
+  min-height: 100vh; 
 }
 
 main {
-  
+  flex: 1; 
   position: relative;
-  max-width: 700px; /* Set a max width for your content */
+  max-width: 700px; 
   margin: 0 auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align to the left */
+  align-items: flex-start; 
   justify-content: center;
-  text-align: left; /* Ensure text aligns to the left */
+  text-align: left; 
 }
 
 h1 {
@@ -29,14 +28,14 @@ h1 {
   margin-bottom: 1rem;
 }
 
-h2{
+h2 {
   font-size: 2rem;
 }
 
 input {
   appearance: none;
   -webkit-appearance: none;
-  border: 0;
+  border: 0; 
   font-size: 0.9rem;
   background: #888;
   padding: 1rem;
@@ -45,10 +44,7 @@ input {
 }
 
 /* FOOTER */
-
 footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -64,9 +60,7 @@ footer p {
   padding: 0.25rem 0;
 }
 
-
-/* NAV-LINKS  */
-
+/* NAV-LINKS */
 nav,
 .nav-links {
   display: flex;
@@ -75,7 +69,6 @@ nav,
 nav {
   justify-content: space-around;
   align-items: center;
-  height: 17vh;
 }
 
 .nav-links {
@@ -97,47 +90,53 @@ a:hover {
 }
 
 #nav-bar {
-  position: fixed;
-  top: 0;
+  position: sticky;
+  top: -80px; 
   left: 0;
   width: 100%;
   z-index: 1000;
   padding: 1rem 0;
+  background: #222;
+  transition: top 0.3s;
 }
 
+body:hover #nav-bar {
+  top: 0; 
+}
 
 /* BLOG ENTRY, DATE AND TEXT */
 .blog-container {
-  padding: 1rem; /* Add spacing around the container */
-  word-wrap: break-word; /* Ensure long words break to fit */
-  overflow-wrap: break-word; /* Compatibility */
-  box-sizing: border-box; /* Make padding part of width */
-  max-width: 100%; /* Prevent horizontal overflow */
+  padding: 1rem; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  box-sizing: border-box; 
+  max-width: 100%; 
 }
 
 .blog-body {
-  word-wrap: break-word; /* Ensure long text breaks */
-  overflow-wrap: break-word; /* Compatibility */
-  max-width: 100%; /* Prevent content from spilling horizontally */
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  max-width: 100%; 
 }
 
 .blog-body p {
-  white-space: pre-wrap; /* Preserve line breaks and wrap long text */
-  word-break: break-word; /* Break long words */
-  overflow: hidden; /* Prevent overflowing */
-  text-align: left; /* Ensure alignment */
+  white-space: pre-wrap; 
+  word-break: break-word; 
+  overflow: hidden; 
+  text-align: left; 
 }
-.blog-entry{
+
+.blog-entry {
   display: flex;
   gap: 2rem;
   margin: 20px 0 20px 0;
 }
 
-.blog-date{
+.blog-date {
   color: grey;
 }
 
-.blog-text{
+.blog-text {
   text-decoration: underline;
 }
 
